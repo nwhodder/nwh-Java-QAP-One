@@ -1,9 +1,13 @@
 package Account;
 
+import java.text.NumberFormat;
+
+
 public class Account {
     private String id;
     private String name;
     private int balance;
+    private NumberFormat fmt = NumberFormat.getCurrencyInstance();
 
     public Account(String id, String name) {
         this.id = id;
@@ -54,7 +58,7 @@ public class Account {
     }
 
     public String toString(){
-        return String.format("Account: %s%nName: %s%nBalance: %d%n", id, name, balance);
+        return String.format("Account: %s%nName: %s%nBalance: %s%n", id, name, fmt.format(balance));
     }
 
 
